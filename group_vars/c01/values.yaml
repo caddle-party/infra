@@ -1,0 +1,6 @@
+vswitch_vlan_id: 4000
+vswitch_link_mtu: 1400
+vswitch_route_config:
+  to: 10.0.0.0/16
+  via: 10.0.1.1
+

@@ -1,0 +1,13 @@
+network:
+  version: 2
+  renderer: networkd
+  vlans:
+    {{ iface_name }}.{{ vswitch_vlan_id }}:
+      id: {{ vswitch_vlan_id }}
+      link: {{ iface_name }}
+      mtu: {{ vswitch_link_mtu }}
+      addresses:
+        - {{ internal_ip }}
+      routes:
+        - to: {{ vswitch_route_config.to }}
+          via: {{ vswitch_route_config.via }}

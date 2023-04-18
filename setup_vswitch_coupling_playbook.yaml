@@ -1,0 +1,7 @@
+---
+- hosts: '{{ servers | mandatory }}'
+  tasks:
+    - name: template netplan file
+      ansible.builtin.template:
+        src: vswitch_coupling_netplan.yaml.j2
+        dest: /etc/netplan/vswitch_coupling_netplan.yaml
